@@ -1,0 +1,9 @@
+##  Item-based collaborative filtering recommendation algorithms
+
+En este paper se intenta proponer un sistema recomendador alternativo a "user KNN". En este se identifican los principales problemas a solucionar de los sistemas recomendores que son la escalabilidad y la calidad de recomendaciones. Para esto usan una base de datos de películas.
+
+En el paper se explora la idea de usar un sistema basado en items, para esto proponen en primer lugar medir la similitud entre pares de items. Primero aíslan a los usuarios que han evaluado a los 2 itemes y aplican un test de similitud (coseno, correlación o coseno ajustado). Luego calculan los k items más similares a cada item a partir de suma ponderada y de regresión.
+
+Finalmente, en la parte experimental usan como métrica el error absoluto medio (MAE). Con esto logran identificar que el coseno ajustado y 30 vecinos son los que brindan mejores resultados. Al compararlo con user KNN el sistema recomendador que proponen obtiene mejores resultados en calidad (un MAE más bajo) y en términos de escalabilidad el desempeño de este nuevo sistema no se ve mayormente afectado cuando se toma un sub-set menor de itemes.
+
+Dentro de las críticas, en primer lugar, ellos utilizaron el set de entrenamiento para ajustar hiper parámetros como el número ideal de vecinos, densidad de los datos y métrica para medir la similitud. Esto no es muy recomendado ya que de cierta forma se le brinda algo de información previa a la maquina al momento de entrenarla, lo ideal sería dividir los datos en un tercer subgrupo que sea de validación (train-test-validaiton). La segunda crítica es que la mejora en calidad de recomendación no es substancial y sería necesario hacer más pruebas con otro tipo de ítems que no sean películas para evaluar si efectivamente es una mejor alternativa en todos los casos o en este en particular.
