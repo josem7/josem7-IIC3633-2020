@@ -1,0 +1,9 @@
+## Collaborative Filtering for Implicit Feedback Datasets
+
+En este paper se explora la idea de en vez de usar feedback explicito como ratings de usuario utilizar feedback implícito como compras, búsquedas e incluso movimiento del mouse se podrían utilizar para esto. Dentro de los desafíos que hay está el hecho de que no hay feedback negativo, el feedback implícito es muy ruidoso, el valor numérico al que se llega es de confianza no de preferencia, por último, se necesitan medidas adecuadas para el feedback implícito.
+
+Algo muy bueno que hacen en el paper es que muestran explícitamente como escala el algoritmo y calculan el O(X) para este a diferencia de los otros papers que solo mostraban como escalaba experimentalmente. Otro aspecto muy bueno es que dejan el paper abierto a discusión y lo que les gustaría mejorar a futuro de el módelo.  
+
+Otro aspecto bueno es que consideran la privacidad del usuario y hacen recomendaciones a usuarios anónimos y con su consentimiento. El paper usa 2 métricas bastante buenas que son most-popular y nearest neighbor (NN) el único problema es que para NN consideran la métrica del coseno cuando previamente aprendimos que coseno ajustado era el que brindaba mejores resultados. Otro aspecto que encuentro remarcable es querer recomendar nuevos programas y no "irse a la segura" recomendando programas previamente vistos. Por último, el hecho de separar las observaciones en preferencia y confianza logra demostrar una mejora significativa.
+
+De los aspectos que me gustaría que se considerara para este tipo de métodos es la posible implementación en ambientes que no sean programas de TV ya que la métrica es si lo vieron o no, mientras que en por ejemplo el e-commerce la métrica no creo que sería tan fácil de identificar ya que comprar o no el producto no sé si sea suficientemente buena.
